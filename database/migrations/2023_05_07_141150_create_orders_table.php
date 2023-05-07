@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('customer_id')->nullable()->constrained()->onUpdate('cascade')->nullOnDelete();
             $table->double('total');
+            $table->timestamp('event_at')->useCurrent();
             $table->timestamps();
         });
     }
